@@ -17,6 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 /* --------------------------------- Setting -------------------------------- */
 app.set('port', process.env.PORT || 3000);
 app.set('views', join(__dirname, 'views'));
+
 app.engine('.hbs', engine({
     defaultLayout: 'main',
     layoutsDir: join(app.get('views'), 'layouts'),
@@ -34,8 +35,10 @@ app.use(express.json());
 
 /* --------------------------------- routes --------------------------------- */
 app.get('/', (req, res) => {
-    res.json({"message": "hola mundo"})
+    res.render('index')
 });
+
+
 
 
 /* ------------------------------ Public files ------------------------------ */
