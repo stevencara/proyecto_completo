@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import {engine} from 'express-handlebars';
+import personasRoutes from './routes/personas.routes.js';
 
 
 
@@ -38,7 +39,7 @@ app.get('/', (req, res) => {
     res.render('index')
 });
 
-
+app.use(personasRoutes);
 
 
 /* ------------------------------ Public files ------------------------------ */
