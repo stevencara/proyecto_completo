@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="card-body">
-                        <form action="/edit/{{persona.id}}" method="post">
+                        <form action="/edit/{{persona.id}}" method="post" enctype="multipart/form-data">
                         
                             <div class="input-group mt-2">
                                 <label for="name" class="input-group-text">Nombre persona</label>
@@ -31,6 +31,14 @@
 
                             <div class="form-group mt-4 d-grid gap-2">
                                 <button class="btn btn-success">Actualizar</button>
+                            </div>
+
+                            <div class="input-group mt-2">
+                                 <img src="/uploads/{{persona.imagen}}" alt="" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px;height: 150px; display: block">
+                            </div>
+
+                            <div class="input-group mt-2">
+                                 <input class="form-control" type="file" name="file" id="file">
                             </div>
 
                         </form>
